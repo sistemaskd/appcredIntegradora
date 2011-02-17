@@ -1,0 +1,36 @@
+<?php
+	/** 
+	 * view para imprimir los usuaros
+	 * @author fnortigoza
+		
+	 */
+	$section		= $this->section; 
+	$data			= $this->data;
+	//print_r($data);die();
+
+
+	foreach ($data as $dato)
+	{
+		switch($section){
+			case 'sucursal': ?>
+		
+			<table>
+				  <tr>
+				    <td><b>Codigo:</b></td>
+				    <td><?php echo $dato[codigo] ?></td>
+				  </tr>
+				  <tr>
+				    <td><b>Nombre Sucursal :</b></td>
+				    <td><?php echo $dato[nombre] ?></td>
+				  </tr>
+				  </table>
+				<!-- FIN -->
+				<?php
+				
+				break;
+	}
+	}
+		
+				
+			
+			

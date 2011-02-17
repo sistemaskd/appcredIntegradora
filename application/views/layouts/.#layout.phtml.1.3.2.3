@@ -1,0 +1,35 @@
+<!-- application/views/layouts/layout.phtml -->
+<?php 
+
+$this->headScript()->offsetSetFile(0, "{$this->libraryPaths()->extjs}/adapter/ext/ext-base.js");
+$this->headScript()->offsetSetFile(1, "{$this->libraryPaths()->extjs}/ext-all.js");
+
+$this->headLink()->prependStylesheet($this->baseUrl().'/application/css/default.css');
+$this->headLink()->prependStylesheet("{$this->libraryPaths()->extjs}/resources/css/ext-all.css");
+$this->headLink()->prependStylesheet("{$this->libraryPaths()->extjs}/examples/layout-browser/layout-browser.css");
+$this->headLink()->prependStylesheet("{$this->libraryPaths()->extjs}/examples/ux/css/CenterLayout.css");
+$this->headLink()->prependStylesheet("{$this->libraryPaths()->extjs}/examples/ux/fileuploadfield/css/fileuploadfield.css");
+$this->headScript()->offsetSetFile(2, "{$this->libraryPaths()->extjs}/examples/ux/MultiSelect.js");
+$this->headScript()->offsetSetFile(3, "{$this->libraryPaths()->extjs}/examples/ux/ItemSelector.js");
+$this->headLink()->prependStylesheet("{$this->libraryPaths()->extjs}/examples/ux/css/MultiSelect.css");
+
+
+
+?>
+<?php echo $this->doctype(); ?>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+
+	<head>
+		<?php echo $this->headLink()."\n" ?>		
+		<?php echo $this->headMeta()."\n" ?>
+		<?php echo $this->headTitle()."\n" ?>
+		<script type="text/javascript">
+			BASE_URL = '<?php echo $this->baseUrl('home.php'); ?>';
+		</script>
+		<?php echo $this->headScript()."\n" ?>
+	</head>
+	<body>
+		<?php echo $this->layout()->content; ?>
+	</body>
+</html>

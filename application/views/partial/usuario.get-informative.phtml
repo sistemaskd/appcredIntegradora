@@ -1,0 +1,40 @@
+<?php
+	/** 
+	 * view para imprimir los usuaros
+	 * @author fnortigoza
+		
+	 */
+	$section		= $this->section; 
+	$data			= $this->data;
+	//print_r($data);die();
+
+
+	foreach ($data as $dato)
+	{
+		switch($section){
+			case 'usuario': ?>
+		
+			<table>
+				  <tr>
+				    <td><b>Nombre:</b></td>
+				    <td><?php echo $dato[nombre] ?></td>
+				  </tr>
+				  <tr>
+				    <td><b>Apellido Paterno :</b></td>
+				    <td><?php echo $dato[apellido_paterno] ?></td>
+				  </tr>
+				  <tr>
+				    <td><b>Apellido Materno :</b></td>
+				    <td><?php echo $dato[apellido_materno] ?></td>
+				  </tr>
+				</table>
+				<!-- FIN -->
+				<?php
+				
+				break;
+	}
+	}
+		
+				
+			
+			

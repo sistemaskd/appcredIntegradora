@@ -1,0 +1,68 @@
+<?php 
+# JS
+$this->headScript()->offsetSetFile(98, "{$this->libraryPaths()->extjs}/examples/ux/PanelResizer.js");
+$this->headScript()->offsetSetFile(99, "{$this->libraryPaths()->extjs}/examples/ux/PagingMemoryProxy.js");
+$this->headScript()->offsetSetFile(102, "{$this->baseUrl()}/application/js/solicitud.consultar.js");
+$this->headScript()->offsetSetFile(103, "{$this->baseUrl()}/application/js/basic.js");
+$this->headScript()->offsetSetFile(106, "{$this->baseUrl()}/application/js/layout-browser.js");
+$this->headScript()->offsetSetFile(107, "{$this->baseUrl()}/application/js/FileUploadField.js");
+$this->headScript()->offsetSetFile(108, "{$this->baseUrl()}/application/js/info-upload.js");
+$this->headScript()->offsetSetFile(109, "{$this->baseUrl()}/application/js/bnp-upload.js");
+$this->headScript()->offsetSetFile(110, "{$this->baseUrl()}/application/js/report.ventas.js");
+$this->headScript()->offsetSetFile(111, "{$this->baseUrl()}/application/js/report.solicitud.js");
+$this->headScript()->offsetSetFile(112, "{$this->baseUrl()}/application/js/administracion.permisos.js");
+$this->headScript()->offsetSetFile(113, "{$this->libraryPaths()->extjs}/examples/ux/MultiSelect.js");
+$this->headScript()->offsetSetFile(114, "{$this->libraryPaths()->extjs}/examples/ux/ItemSelector.js");
+# CSS
+$this->headLink()->prependStylesheet("{$this->libraryPaths()->extjs}/examples/layout-browser/layout-browser.css");
+$this->headLink()->prependStylesheet("{$this->libraryPaths()->extjs}/examples/ux/fileuploadfield/css/fileuploadfield.css");
+$this->headLink()->prependStylesheet("{$this->libraryPaths()->extjs}/examples/ux/css/MultiSelect.css");
+$this->headLink()->prependStylesheet("{$this->libraryPaths()->extjs}/examples/shared/examples.css");
+
+
+
+
+
+?>
+
+<div id="loading-mask"></div>
+<div id="loading">
+	<span><font color='white'>Cargando el sistema...</font></span>
+</div>
+
+<?php echo $this->loggedInAs() ?>
+
+    <div id="header">
+    	<h1>
+    		CreditManager -  Kondinero
+    	</h1>
+    </div>
+    <div style="display:none;">
+
+        <!-- Start page content -->
+        <div id="start-div">
+            <div style="float:left;" ><img src="<?php echo $this->baseUrl() ?>/application/css/images/logo.jpg" /></div>
+            <div style="margin-left:100px;">
+                <h2>Bienvenidos CreditManager</h2>
+                <p>CreditManager, aplicacion para el manejo de solicitudes, generacion de reportes
+                y actualizacion de informacion BNP, Credito Real!</p>
+                <p>Selecione del Menu la opcion al que este Autorizado</p>
+            </div>
+        </div>
+
+        <!-- Basic layouts -->
+         <div id="solicitud-details">prueba</div>
+         
+         <div id="consultar-details">prueba</div>
+         
+         <div id="info-details">prueba</div>
+         
+         <div id="bnp-details">prueba</div>
+         <div id="reportsolicitud-details">prueba</div>
+         <div id="reportzona-details">prueba</div>
+         <div id="usuarios-details">prueba</div>
+     
+        
+       	
+    </div>
+

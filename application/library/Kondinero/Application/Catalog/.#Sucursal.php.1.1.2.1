@@ -1,0 +1,40 @@
+<?php
+	/**
+	 * Catalogo para sucursales
+	 * @author emoreno
+	 */
+class Kondinero_Application_Catalog_Sucursal extends Kondinero_Application_Catalog
+{
+	protected $_tableClass = 'Kondinero_Db_Table_Sucursal';
+	
+	/**
+	 * Devuelve todos los valores de un catalogo segun el usuario
+	 */
+			
+	public function getFromCatalog($field)
+	{
+		$request= $this->getRequest();
+    	$sucursal = new Kondinero_Db_Table_Sucursal();
+    	$info = $sucursal->info();
+		$select = $sucursal->getDefaultAdapter()->select();
+		
+		$id_usuario = Zend_Auth::getInstance()->getIdentity()->id_usuario;
+				
+				$select->from(array('u' => 'usuario_to_sucursal'), 
+								array('s.nombre','s.id_sucursal'))
+						->join(array('s'=>'sucursal'), 'u.id_sucursal = s.id_sucursal', array())
+						->where('u.id_usuario = ?', $id_usuario);
+				
+	         	$statement= $select->query();
+    			$registros= $statement->fetchAll();
+    			die(json_encode($registros));
+
+		
+	}
+}
+
+
+
+
+
+

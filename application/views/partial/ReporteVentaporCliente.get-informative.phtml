@@ -1,0 +1,47 @@
+<?php
+	/** 
+	 * view para imprimir los usuaros
+	 * @author fnortigoza
+		
+	 */
+	$section		= $this->section; 
+	$data			= $this->data;
+	//print_r($data);die();
+?>            <table>
+				<tr>
+				<th>Vendedor</th>
+				<th>Sucursal</th>
+				<th>Folio</th>
+				<th>Nombre</th>
+				<th>Plazo</th>
+				<th>Monto Credito</th>
+				<th>Fecha Ingreso</th>
+				</tr>
+				 <table>
+				<?php 
+	foreach ($data as $dato)
+	{
+		switch($section){
+			case 'ReporteVentaporCliente': ?>
+				<table>
+				  <tr>
+				  
+				    <td><?php echo $dato[vendedor] ?></td>
+				      <td><?php echo $dato[codigo_sucursal] ?></td>
+				         <td><?php echo $dato[folio] ?></td>
+				          <td><?php echo $dato[nombre] ?></td>
+				         <td><?php echo $dato[plazo] ?></td>
+				          <td><?php echo $dato[monto_credito] ?></td>
+				         <td><?php echo $dato[fecha_creacion] ?></td>
+				  </tr>
+				 </table>
+				<!-- FIN -->
+				<?php
+				
+				break;
+	}
+	}
+		
+				
+			
+			

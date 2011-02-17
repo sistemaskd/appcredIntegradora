@@ -1,0 +1,85 @@
+<?php
+	/**
+	 * 
+	 */
+	$section		= $this->section; 
+	$data			= $this->data;
+
+	if(array_key_exists($section,$data)){
+		$content = $data->$section; 
+			switch($section){
+			case 'cliente': ?>
+				<!-- AQUI LO DE CLIENTES -->
+				<table>
+				  <tr>
+				    <td><b>Nombre:</b></td>
+				    <td><?php echo @$content->nombre ?></td>
+				  </tr>
+				  <tr>
+				    <td><b>Apellido Paterno :</b></td>
+				    <td><?php echo @$content->apellido_paterno ?></td>
+				  </tr>
+				  <tr>
+				    <td><b>Apellido Materno :</b></td>
+				    <td><?php echo @$content->apellido_materno ?></td>
+				  </tr>
+				</table>
+				<!-- FIN -->
+				<?php
+				break;
+			case 'credito': ?>
+				<!-- AQUI LO DE CREDITO -->
+				<table>
+				  <tr>
+				    <td><b>Credito:</b></td>
+				    <td><?php echo @$content->monto_credito ?></td>
+				  </tr>
+				  <tr>
+				    <td><b>Saldo :</b></td>
+				    <td><?php echo @$content->saldo ?></td>
+				  </tr>
+				</table>
+				<!-- FIN -->
+				<?php
+				break;
+			case 'empleo': ?>
+				<!-- AQUI LO DE CREDITO -->
+				<table>
+				  <tr>
+				    <td><b>Dependencia laboral:</b></td>
+				    <td><?php echo @$content->dependencia_laboral ?></td>
+				  </tr>
+				  <tr>
+				    <td><b>Profesi&oacute;n :</b></td>
+				    <td><?php echo @$content->profesion ?></td>
+				  </tr>
+				</table>
+				<!-- FIN -->
+				<?php
+				break;
+			case 'referencia':
+				$indice = 1; 
+				?>
+				<!-- AQUI LO DE REFERENCIA -->
+				<?php foreach($content as $referencia){ ?>
+					<table>
+					  <th>
+					  	<td colspan=2>Referencia #<?php echo $indice++ ?> </td>
+					  </th>
+					  <tr>
+					    <td><b>Nombre referencia:</b></td>
+					    <td><?php echo @$referencia->nombre_referencia ?></td>
+					  </tr>
+					  <tr>
+					    <td><b>Telefono referencia :</b></td>
+					    <td><?php echo @$referencia->telefono_referencia ?></td>
+					  </tr>
+					</table>
+				<?php } ?>
+				<!-- FIN -->
+				<?php
+				break;
+		}
+	} else {
+		# -
+	}

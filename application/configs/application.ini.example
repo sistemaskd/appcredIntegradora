@@ -1,0 +1,52 @@
+[production]
+
+; CONSIDERACIONES PHP.INI
+; upload_max_filesize = 500M
+; memory_limit = 500M
+; max_execution_time = 1800
+; short_open_tag = On
+
+phpSettings.display_startup_errors = 0
+phpSettings.display_errors = 0
+includePaths.library = APPLICATION_PATH "/library"
+bootstrap.path = APPLICATION_PATH "/Bootstrap.php"
+bootstrap.class = "Bootstrap"
+appnamespace = "Application"
+
+; Recursos de BD
+resources.db.adapter = PDO_MYSQL
+resources.db.params.host = localhost
+resources.db.params.username = root
+resources.db.params.password =
+resources.db.params.dbname = creditmanager
+
+; Recursos generales
+resources.frontController.controllerDirectory = APPLICATION_PATH "/controllers"
+resources.frontController.params.displayExceptions = 0
+resources.session.save_path = APPLICATION_PATH "/session"
+
+; Plug-ins
+resources.frontController.plugins.antiflood="Kondinero_Controller_Plugin_Antiflood"
+
+; Layouts, scripts y configuraciones de view
+resources.view[] =
+resources.view.doctype = "XHTML1_STRICT"
+resources.view.helperPath.Kondinero_View_Helper = APPLICATION_PATH "/library/Kondinero/View/Helper"
+resources.view.scriptPath.scripts = APPLICATION_PATH "/views/scripts"
+resources.view.scriptPath.partial = APPLICATION_PATH "/views/partial"
+resources.layout.layoutPath       = APPLICATION_PATH "/views/layouts"
+
+; Generales
+resources.view.helper.libraryPaths.zend =  "/application/library/Zend"
+resources.view.helper.libraryPaths.extjs = "/application/library/extjs"
+
+[staging : production]
+
+[testing : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+
+[development : production]
+phpSettings.display_startup_errors = 1
+phpSettings.display_errors = 1
+resources.frontController.params.displayExceptions = 1
